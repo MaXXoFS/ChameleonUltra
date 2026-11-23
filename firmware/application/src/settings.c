@@ -39,7 +39,7 @@ void settings_init_button_press_config(void) {
 // add on version3
 void settings_init_button_long_press_config(void) {
     config.button_a_long_press = SettingsButtonCloneIcUid;
-    config.button_b_long_press = SettingsButtonShowBattery;
+    config.button_b_long_press = SettingsButtonT5577Test;
 }
 
 // add on version4
@@ -80,10 +80,13 @@ void settings_migrate(void) {
         case 4:
             settings_init_ble_pairing_enable_config();
 
+        case 5:
+            // Version 6: assign B-long to the T5577 test function.
+            config.button_b_long_press = SettingsButtonT5577Test;
+
             /*
              * Add new migration steps ABOVE THIS COMMENT
-             * `settings_update_version_for_config()` and `break` statements should only be used on the last migration step, all the previous steps must fall
-             * through to the next case.
+             * `settings_update_version_for_config()` and `break` statements should only be used on the last migration step.
              */
 
             settings_update_version_for_config();

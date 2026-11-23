@@ -5,7 +5,7 @@
 
 #include "utils.h"
 
-#define SETTINGS_CURRENT_VERSION 5
+#define SETTINGS_CURRENT_VERSION 6
 #define BLE_PAIRING_KEY_LEN 6
 #define DEFAULT_BLE_PAIRING_KEY "123456"  // length must == 6
 
@@ -26,6 +26,7 @@ typedef enum {
     // Read the UID card number immediately after pressing, continue searching, and simulate immediately after reading the card
     SettingsButtonCloneIcUid = 3U,
     SettingsButtonShowBattery = 4U,
+    SettingsButtonT5577Test = 5U,
 } settings_button_function_t;
 
 typedef struct ALIGN_U32 {
