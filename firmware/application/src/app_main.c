@@ -757,6 +757,15 @@ static void run_button_function_by_settings(settings_button_function_t sbf) {
             show_battery();
             break;
 
+        case SettingsButtonT5577Test:
+#if defined(PROJECT_CHAMELEON_ULTRA)
+            offline_status_blink_color(RGB_CYAN);
+            NRF_LOG_INFO("T5577 test mode selected");
+#else
+            NRF_LOG_WARNING("T5577 test mode is only supported on Ultra");
+#endif
+            break;
+
         default:
             NRF_LOG_ERROR("Unsupported button function")
             break;
