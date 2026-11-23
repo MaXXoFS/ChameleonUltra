@@ -755,6 +755,7 @@ static void run_button_function_by_settings(settings_button_function_t sbf) {
 
         case SettingsButtonShowBattery:
             show_battery();
+            break;
 
         default:
             NRF_LOG_ERROR("Unsupported button function")
